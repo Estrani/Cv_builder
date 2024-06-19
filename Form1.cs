@@ -149,7 +149,21 @@ namespace PublipostageDemo
             }
 
             // Category tabs
-            
+            Info loisir = new Info(1, "Jeu vidéo");
+            List<Info> l_infos = new List<Info>() { loisir };
+            Work work = new Work(1, 2024, "formation", "Arles", "Greta", "certif", l_infos, ".............................");
+            List<Work> listW = new List<Work>() { work };
+            CategoryCv cat = new CategoryCv(1, "Centre d'interets", "\o/", l_infos);
+            List<CategoryCv> cater = new List<CategoryCv>() { cat };
+            // Cv cv = new Cv(1, personne, cater);
+
+            Table miscTable = allTables.Where(x => x.Title == "misc_tab").First();
+            if (miscTable != null)
+            {
+                Word.Cell miscCell = miscTable.Cell(1, 1);
+                miscCell.Range.Text = string.Join("\r\n", persona1.GetMiscs().Select(x => x.GetExtra()));
+            }
+
             #endregion
 
             document.ExportAsFixedFormat(fichierFinal, Word.WdExportFormat.wdExportFormatPDF);

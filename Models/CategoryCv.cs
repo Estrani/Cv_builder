@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp2.Models
 {
-    internal class Category
+    internal class CategoryCv
     {
         int _id {  get; set; }
         string _title { get; set; }
@@ -14,12 +14,19 @@ namespace ConsoleApp2.Models
         List<Info> _infos { get; set; }
         List<Work> _works { get; set; }
 
-        public Category(int id, string title, string icon, List<Info> infos, List<Work> works)
+        public CategoryCv(int id, string title, string icon, List<Info> infos)
         {
             this._id = id;
             this._title = title;
             this._icon = icon;
             this._infos = infos;
+        }
+
+        public CategoryCv(int id, string title, string icon, List<Work> works)
+        {
+            this._id = id;
+            this._title = title;
+            this._icon = icon;
             this._works = works;
         }
 

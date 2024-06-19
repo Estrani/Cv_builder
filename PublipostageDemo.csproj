@@ -53,7 +53,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Helper\MsDocumentHelper.cs" />
-    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\CategoryCv.cs" />
     <Compile Include="Models\Cv.cs" />
     <Compile Include="Models\Info.cs" />
     <Compile Include="Models\Misc.cs" />

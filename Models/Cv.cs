@@ -10,16 +10,16 @@ namespace ConsoleApp2.Models
     {
         int _id {  get; set; }
         Persona _persona { get; set; }
-        List<Category> _categories { get; set; }
+        List<CategoryCv> _categories { get; set; }
 
-        public Cv(int id, Persona persona, List<Category> categories)
+        public Cv(int id, Persona persona, List<CategoryCv> categories)
         {
             this._id = id;
             this._persona = persona;
             this._categories = categories;
         }
 
-        public List<Category> GetCategories() { return this._categories; }
+        public List<CategoryCv> GetCategories() { return this._categories; }
 
         public void SetPersona(int id, string name, string title, string picture, string city, string email, string phone, List<Misc> miscs)
         {
@@ -29,11 +29,11 @@ namespace ConsoleApp2.Models
 
         public void AddCategory(int id, string title, string icon, List<Info> infos, List<Work> works)
         {
-            Category new_category = new Category(id, title, icon, infos, works);
+            CategoryCv new_category = new CategoryCv(id, title, icon, infos, works);
             this._categories.Add(new_category);
         }
 
-        public Category GetCategoryById(int a) { return this.GetCategories().FirstOrDefault(category => category.GetId() == a); }
+        public CategoryCv GetCategoryById(int a) { return this.GetCategories().FirstOrDefault(category => category.GetId() == a); }
 
        // public void UpdateCategory(int a, string b) { this.GetMiscById(a).SetExtra(b); }
 
