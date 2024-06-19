@@ -119,12 +119,19 @@ namespace PublipostageDemo
             {
                 allTables.Add(table);
             }
-
+            //persona tabs
             Table ppTable = allTables.Where(x => x.Title == "pp_tab").First();
             if (ppTable != null)
             {
                 Word.Cell ppCell = ppTable.Cell(1, 1);
                 ppCell.Range.Text = persona1.GetPicture().ToString();
+            }
+
+            Table titleTable = allTables.Where(x => x.Title == "title_tab").First();
+            if (titleTable != null)
+            {
+                Word.Cell titleCell = titleTable.Cell(1, 1);
+                titleCell.Range.Text = persona1.GetTitle().ToString();
             }
 
             Table personaTable = allTables.Where(x => x.Title == "persona_tab").First();
@@ -140,6 +147,8 @@ namespace PublipostageDemo
                 Word.Cell miscCell = miscTable.Cell(1, 1);
                 miscCell.Range.Text = string.Join("\r\n", persona1.GetMiscs().Select(x => x.GetExtra()));
             }
+
+            // Category tabs
             
             #endregion
 
