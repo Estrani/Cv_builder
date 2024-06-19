@@ -29,6 +29,19 @@ namespace ConsoleApp2.Models
             this._description = description;
         }
 
+        public void SetWorkContent(int b, string c, string d, string e, string f, List<Info> g, string h)
+        {
+            this._year = b;
+            this._title = c;
+            this._place = d;
+            this._organism = e;
+            this._certificate = f;
+            this._skills = g;
+            this._description = h;
+
+        }
+        public int GetId() { return _id; }
+
         public string GetWork()
         {
             return (this._id + this._year + this._title + this._place + this._organism + this._certificate + this._skills + this._description).ToString();
@@ -41,7 +54,7 @@ namespace ConsoleApp2.Models
 
         }
 
-        public void AddSill(int a, string b)
+        public void AddSkill(int a, string b)
         {
             Info new_info = new Info(a, b);
             this._skills.Add(new_info);

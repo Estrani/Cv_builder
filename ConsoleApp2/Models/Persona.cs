@@ -34,11 +34,7 @@ namespace ConsoleApp2.Models
             return (this._id + this._name + this._title + this._picture + this._city + this._email + this._phone + this._miscs).ToString();
         }
 
-        public List<Misc> GetMiscs()
-        {
-            return this._miscs;
-            
-        }
+        public List<Misc> GetMiscs(){ return this._miscs; }
 
         public void AddMisc(int a, string b)
         {
@@ -46,20 +42,10 @@ namespace ConsoleApp2.Models
            this._miscs.Add(new_misc);
         }
 
-        public Misc GetMiscById(int a) 
-        {
-            return this.GetMiscs().FirstOrDefault(misc => misc.GetId() == a);
-        }
+        public Misc GetMiscById(int a){ return this.GetMiscs().FirstOrDefault(misc => misc.GetId() == a); }
 
-        public void UpdateExtraMisc(int a, string b)
-        {
-            this.GetMiscById(a).SetExtra(b);
+        public void UpdateExtraMisc(int a, string b){ this.GetMiscById(a).SetExtra(b); }
 
-        }
-
-        public void RemoveMisc(int a) 
-        {
-            this.GetMiscs().Remove(this.GetMiscById(a));
-        }
+        public void RemoveMisc(int a){ this.GetMiscs().Remove(this.GetMiscById(a)); }
     }
 }
