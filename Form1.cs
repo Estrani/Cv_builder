@@ -149,19 +149,81 @@ namespace PublipostageDemo
             }
 
             // Category tabs
-            Info loisir = new Info(1, "Jeu vidéo");
-            List<Info> l_infos = new List<Info>() { loisir };
-            Work work = new Work(1, 2024, "formation", "Arles", "Greta", "certif", l_infos, ".............................");
-            List<Work> listW = new List<Work>() { work };
-            CategoryCv cat = new CategoryCv(1, "Centre d'interets", "\o/", l_infos);
-            List<CategoryCv> cater = new List<CategoryCv>() { cat };
+
+
+            // Work work = new Work(1, 2024, "formation", "Arles", "Greta", "certif", l_infos, ".............................");
+            //  List<Work> listW = new List<Work>() { work };
+
+            //  List<CategoryCv> cater = new List<CategoryCv>() { cat };
             // Cv cv = new Cv(1, personne, cater);
 
-            Table miscTable = allTables.Where(x => x.Title == "misc_tab").First();
-            if (miscTable != null)
+            Info calme = new Info(2, "Calme");
+            List<Info> soft = new List<Info>() { calme };
+            CategoryCv savoir_etre = new CategoryCv(2, "Savoir-être", "-o-", soft);
+
+
+            Table softskillTable = allTables.Where(x => x.Title == "softskill_tab").First();
+            if (softskillTable != null)
             {
-                Word.Cell miscCell = miscTable.Cell(1, 1);
-                miscCell.Range.Text = string.Join("\r\n", persona1.GetMiscs().Select(x => x.GetExtra()));
+                Word.Cell softskillCell = softskillTable.Cell(1, 1);
+                softskillCell.Range.Text = string.Join(" ", savoir_etre.GetIcon(), savoir_etre.GetTitle());
+
+                Word.Cell softskillCell2 = softskillTable.Cell(2, 1);
+                softskillCell2.Range.Text = string.Join("\r\n", savoir_etre.GetInfos().Select(x => x.GetName()));
+            }
+
+            Info loisir = new Info(1, "Jeu vidéo");
+            List<Info> l_infos = new List<Info>() { loisir };
+            CategoryCv cat = new CategoryCv(1, "Centre d'interets", "lllllll", l_infos);
+
+
+            Table hobbyTable = allTables.Where(x => x.Title == "hobby_tab").First();
+            if (hobbyTable != null)
+            {
+                Word.Cell hobbyCell = hobbyTable.Cell(1, 1);
+                hobbyCell.Range.Text = string.Join(" ", cat.GetIcon(), cat.GetTitle());
+
+                Word.Cell hobbyCell2 = hobbyTable.Cell(2, 1);
+                hobbyCell2.Range.Text = string.Join("\r\n", cat.GetInfos().Select(x => x.GetName()));
+            }
+
+            Info git = new Info(3, "Github link");
+            List<Info> social_net = new List<Info>() { git };
+            CategoryCv reseaux_sociaux = new CategoryCv(3, "Réseaux sociaux", "o-o-o", social_net);
+
+
+            Table socialTable = allTables.Where(x => x.Title == "social_tab").First();
+            if (socialTable != null)
+            {
+                Word.Cell socialCell = socialTable.Cell(1, 1);
+                socialCell.Range.Text = string.Join(" ", reseaux_sociaux.GetIcon(), reseaux_sociaux.GetTitle());
+
+                Word.Cell socialCell2 = socialTable.Cell(2, 1);
+                socialCell2.Range.Text = string.Join("\r\n", reseaux_sociaux.GetInfos().Select(x => x.GetName()));
+            }
+
+            Info html = new Info(4, "HTML5");
+            List<Info> savoir = new List<Info>() { html };
+            CategoryCv savoir_faire = new CategoryCv(4, "Savoir-faire", "lo/", savoir);
+
+            Info figma = new Info(6, "Figma");
+            List<Info> outil = new List<Info>() { figma };
+            CategoryCv tools = new CategoryCv(5, "Outils Maitrisés", "/lo", outil);
+
+            Table skillTable = allTables.Where(x => x.Title == "skill_tab").First();
+            if (skillTable != null)
+            {
+                Word.Cell skillCell = skillTable.Cell(1, 1);
+                skillCell.Range.Text = string.Join(" ", savoir_faire.GetIcon(), savoir_faire.GetTitle());
+
+                Word.Cell skillCell2 = skillTable.Cell(2, 1);
+                skillCell2.Range.Text = string.Join("\r\n", savoir_faire.GetInfos().Select(x => x.GetName()));
+
+                Word.Cell skillCell3 = skillTable.Cell(1, 2);
+                skillCell3.Range.Text = string.Join(" ", tools.GetIcon(), tools.GetTitle());
+
+                Word.Cell skillCell4 = skillTable.Cell(2, 2);
+                skillCell4.Range.Text = string.Join("\r\n", tools.GetInfos().Select(x => x.GetName()));
             }
 
             #endregion
@@ -172,5 +234,7 @@ namespace PublipostageDemo
             // Si non le fichier n'est plus utilisable
             wApp.Quit(SaveChanges: false);
         }
+
+        
     }
 }

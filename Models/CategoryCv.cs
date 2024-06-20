@@ -31,6 +31,8 @@ namespace ConsoleApp2.Models
         }
 
         public int GetId() { return _id; }
+        public string GetTitle() { return _title; }
+        public string GetIcon() { return _icon;}
 
         public string GetCategory()
         {

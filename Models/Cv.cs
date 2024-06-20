@@ -27,11 +27,11 @@ namespace ConsoleApp2.Models
                 this._persona = new_persona;
         }
 
-        public void AddCategory(int id, string title, string icon, List<Info> infos, List<Work> works)
+       /* public void AddCategory(int id, string title, string icon, List<Info> infos, List<Work> works)
         {
             CategoryCv new_category = new CategoryCv(id, title, icon, infos, works);
             this._categories.Add(new_category);
-        }
+        }*/
 
         public CategoryCv GetCategoryById(int a) { return this.GetCategories().FirstOrDefault(category => category.GetId() == a); }
 
