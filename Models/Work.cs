@@ -41,6 +41,12 @@ namespace ConsoleApp2.Models
 
         }
         public int GetId() { return _id; }
+        public int GetYear() { return _year;}
+        public string GetTitle() { return _title;}
+        public string GetPlace() { return _place;}
+        public string GetOrganism() { return _organism;}
+        public string GetCertificate() { return _certificate;}
+        public string GetDescription() { return _description;}
 
         public string GetWork()
         {

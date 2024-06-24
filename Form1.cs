@@ -151,8 +151,7 @@ namespace PublipostageDemo
             // Category tabs
 
 
-            // Work work = new Work(1, 2024, "formation", "Arles", "Greta", "certif", l_infos, ".............................");
-            //  List<Work> listW = new List<Work>() { work };
+            
 
             //  List<CategoryCv> cater = new List<CategoryCv>() { cat };
             // Cv cv = new Cv(1, personne, cater);
@@ -224,6 +223,20 @@ namespace PublipostageDemo
 
                 Word.Cell skillCell4 = skillTable.Cell(2, 2);
                 skillCell4.Range.Text = string.Join("\r\n", tools.GetInfos().Select(x => x.GetName()));
+            }
+             Work work = new Work(1, 2024, "formation", "Arles", "Greta", "certif", l_infos, ".............................");
+             List<Work> listW = new List<Work>() { work };
+            CategoryCv exp = new CategoryCv(5, "Experiences Professionels", "^^^^", listW);
+
+
+            Table expTable = allTables.Where(x => x.Title == "exp_tab").First();
+            if (expTable != null)
+            {
+                Word.Cell expCell = expTable.Cell(1, 1);
+                expCell.Range.Text = string.Join(" ", exp.GetIcon(), exp.GetTitle());
+
+                Word.Cell expCell2 = expTable.Cell(2, 1);
+                expCell2.Range.Text = string.Join("\r\n", exp.GetWorks().Select(x => x.GetWork()));
             }
 
             #endregion
