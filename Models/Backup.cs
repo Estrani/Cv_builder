@@ -19,13 +19,18 @@ namespace PublipostageDemo.Models
         [JsonInclude]
         Engine _engine { get; set; }
 
+        public Backup () { }
         public Backup(int id, Engine engine)
         {
             this._id = id;
             this._engine = engine;
         }
 
+        public int GetId() {  return _id; }
         public Engine GetEngine() { return _engine; }
+
+        public void SetId(int id) { this._id = id;}
+        public void SetEngine(Engine engine) { this._engine = engine;}
 
 
         public void ToJsonFile()
@@ -68,10 +73,10 @@ namespace PublipostageDemo.Models
             string filePath = Path.Combine(folderPath, fileName);
 
             Console.WriteLine($"Titre: {title}");
-            Console.WriteLine($"Objet Engine: {JsonSerializer.Serialize(engine, new JsonSerializerOptions { WriteIndented = true })}");
+            Console.WriteLine($"Objet Engine: {JsonSerializer.Serialize(this, new JsonSerializerOptions { WriteIndented = true })}");
 
 
-            string jsonString = JsonSerializer.Serialize(engine, new JsonSerializerOptions { WriteIndented = true });
+            string jsonString = JsonSerializer.Serialize(this, new JsonSerializerOptions { WriteIndented = true });
 
             File.WriteAllText(filePath, jsonString);
         }
@@ -80,7 +85,10 @@ namespace PublipostageDemo.Models
         {
             string jsonStringFromFile = File.ReadAllText(fileName);
 
-            Engine deserializedFile = JsonSerializer.Deserialize<Engine>(jsonStringFromFile);
+            Backup deserializedFile = JsonSerializer.Deserialize<Backup>(jsonStringFromFile);
+
+            this.SetId(deserializedFile._id);
+            this.SetEngine(deserializedFile._engine);
         }
     }
 }

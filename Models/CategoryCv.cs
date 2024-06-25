@@ -20,6 +20,8 @@ namespace ConsoleApp2.Models
         [JsonInclude]
         List<Work> _works { get; set; }
 
+        public CategoryCv() { }
+
         public CategoryCv(int id, string title, string icon, List<Info> infos)
         {
             this._id = id;

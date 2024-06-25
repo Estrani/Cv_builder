@@ -18,6 +18,9 @@ namespace PublipostageDemo.Models
         [JsonInclude]
         string _style { get; set; }
 
+        public Engine() { }
+
+
         public Engine(int id, Cv cv, string style)
         {
             this._id = id;

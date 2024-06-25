@@ -26,6 +26,8 @@ namespace ConsoleApp2.Models
         [JsonInclude]
         string _description { get; set; }
 
+        public Work() { }
+
         public Work (int id, int year, string title, string place, string organism, string certificate, List<Info> skills, string description)
         {
             this._id = id;

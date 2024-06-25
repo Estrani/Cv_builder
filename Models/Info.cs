@@ -14,6 +14,8 @@ namespace ConsoleApp2.Models
         [JsonInclude]
         string _name { get; set; }
 
+        public Info() { }
+
         public Info(int id, string name)
         {
             this._id = id;

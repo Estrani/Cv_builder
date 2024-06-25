@@ -14,6 +14,8 @@ namespace ConsoleApp2.Models
         [JsonInclude]
         string _extra { get; set; }
 
+        public Misc() { }
+
         public Misc(int id, string extra)
         {
             this._id = id;

@@ -108,7 +108,7 @@ namespace PublipostageDemo
             #endregion
             List<Misc> miscs = new List<Misc>() { permis, langue };
 
-            Persona persona1 = new Persona(1, "Lambert Perrine", "Développeuse C#", "img", "Graveson", "perrine.lambert24@gmail.com", "0606060606", miscs);
+            Persona persona1 = new Persona(1, "Lambert Perrine", "Développeuse C#", "C:\\Users\\Formation\\Source\\Repos\\Estrani\\Cv_builder\\Media\\_4e0bf317-78b5-4d2c-a5f0-ee2cd81bbba8 1.png", "Graveson", "perrine.lambert24@gmail.com", "0606060606", miscs);
 
             #region ajouter un tableau
             // Get the collection of all tables in the document
@@ -260,6 +260,39 @@ namespace PublipostageDemo
             wApp.Quit(SaveChanges: false);
         }
 
-        
+
+        private void Import_Click(object sender, EventArgs e)
+        {
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+            
+                Backup backupFile = new Backup();
+                backupFile.ReadJsonFile(openFileDialog1.FileName);
+
+                TitleInput.Text = backupFile.GetEngine().GetCv().GetPersona().GetTitle();
+                Image image = Image.FromFile(backupFile.GetEngine().GetCv().GetPersona().GetPicture());
+                pictureBox1.Image = image;
+                NameInput.Text = backupFile.GetEngine().GetCv().GetPersona().GetName();
+                CityInput.Text = backupFile.GetEngine().GetCv().GetPersona().GetCity();
+                EmailInput.Text = backupFile.GetEngine().GetCv().GetPersona().GetEmail();
+                PhoneInput.Text = backupFile.GetEngine().GetCv().GetPersona().GetPhone();
+
+                int rowMisc = 0;
+
+                foreach (Misc misc in backupFile.GetEngine().GetCv().GetPersona().GetMiscs())
+                {
+                    System.Windows.Forms.TextBox textBox = new System.Windows.Forms.TextBox();
+                    textBox.Text = misc.GetExtra();
+                    textBox.Width = 170;
+                    MiscPanel.Controls.Add(textBox, 0, rowMisc);
+                    rowMisc++;
+                    MiscPanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+
+
+                }
+            }
+        }
+
     }
 }

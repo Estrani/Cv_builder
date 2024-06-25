@@ -26,6 +26,8 @@ namespace ConsoleApp2.Models
         [JsonInclude]
         List<Misc>_miscs { get; set; }
 
+        public Persona() { }
+
         public Persona(int id, string name, string title, string picture, string city, string email, string phone, List<Misc> miscs)
         {
             _id = id;

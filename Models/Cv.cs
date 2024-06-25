@@ -16,6 +16,8 @@ namespace ConsoleApp2.Models
         [JsonInclude]
         List<CategoryCv> _categories { get; set; }
 
+        public Cv() { }
+
         public Cv(int id, Persona persona, List<CategoryCv> categories)
         {
             this._id = id;
