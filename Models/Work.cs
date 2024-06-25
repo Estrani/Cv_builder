@@ -2,19 +2,28 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace ConsoleApp2.Models
 {
     internal class Work
     {
+        [JsonInclude]
         int _id {  get; set; }
+        [JsonInclude]
         int _year {  get; set; }
+        [JsonInclude]
         string _title { get; set; }
+        [JsonInclude]
         string _place { get; set; }
+        [JsonInclude]
         string _organism { get; set; }
+        [JsonInclude]
         string _certificate {  get; set; }
+        [JsonInclude]
         List<Info> _skills { get; set; }
+        [JsonInclude]
         string _description { get; set; }
 
         public Work (int id, int year, string title, string place, string organism, string certificate, List<Info> skills, string description)

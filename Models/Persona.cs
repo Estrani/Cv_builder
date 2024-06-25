@@ -2,19 +2,28 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace ConsoleApp2.Models
 {
     internal class Persona
     {
+        [JsonInclude]
         int _id { get; set; }
+        [JsonInclude]
         string _name { get; set; }
+        [JsonInclude]
         string _title { get; set; }
+        [JsonInclude]
         string _picture {  get; set; }
+        [JsonInclude]
         string _city { get; set; }
+        [JsonInclude]
         string _email {  get; set; }
+        [JsonInclude]
         string _phone { get; set; }
+        [JsonInclude]
         List<Misc>_miscs { get; set; }
 
         public Persona(int id, string name, string title, string picture, string city, string email, string phone, List<Misc> miscs)

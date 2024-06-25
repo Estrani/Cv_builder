@@ -2,16 +2,22 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace ConsoleApp2.Models
 {
     internal class CategoryCv
     {
+        [JsonInclude]
         int _id {  get; set; }
+        [JsonInclude]
         string _title { get; set; }
+        [JsonInclude]
         string _icon { get; set; }
+        [JsonInclude]
         List<Info> _infos { get; set; }
+        [JsonInclude]
         List<Work> _works { get; set; }
 
         public CategoryCv(int id, string title, string icon, List<Info> infos)

@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace ConsoleApp2.Models
 {
     internal class Misc
     {
+        [JsonInclude]
         int _id {  get; set; }
+        [JsonInclude]
         string _extra { get; set; }
 
         public Misc(int id, string extra)

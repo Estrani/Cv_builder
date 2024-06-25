@@ -2,14 +2,18 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace ConsoleApp2.Models
 {
     internal class Cv
     {
+        [JsonInclude]
         int _id {  get; set; }
+        [JsonInclude]
         Persona _persona { get; set; }
+        [JsonInclude]
         List<CategoryCv> _categories { get; set; }
 
         public Cv(int id, Persona persona, List<CategoryCv> categories)
@@ -18,6 +22,8 @@ namespace ConsoleApp2.Models
             this._persona = persona;
             this._categories = categories;
         }
+
+        public Persona GetPersona() { return _persona; }
 
         public List<CategoryCv> GetCategories() { return this._categories; }
 

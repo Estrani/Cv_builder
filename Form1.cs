@@ -1,6 +1,7 @@
 ﻿using ConsoleApp2.Models;
 using Microsoft.Office.Interop.Word;
 using PublipostageDemo.Helper;
+using PublipostageDemo.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -150,12 +151,6 @@ namespace PublipostageDemo
 
             // Category tabs
 
-
-            
-
-            //  List<CategoryCv> cater = new List<CategoryCv>() { cat };
-            // Cv cv = new Cv(1, personne, cater);
-
             Info calme = new Info(2, "Calme");
             List<Info> soft = new List<Info>() { calme };
             CategoryCv savoir_etre = new CategoryCv(2, "Savoir-être", "-o-", soft);
@@ -238,6 +233,23 @@ namespace PublipostageDemo
                 Word.Cell expCell2 = expTable.Cell(2, 1);
                 expCell2.Range.Text = string.Join("\r\n", exp.GetWorks().Select(x => x.GetWork()));
             }
+
+            Table certifTable = allTables.Where(x => x.Title == "certif_tab").First();
+            if (certifTable != null)
+            {
+                Word.Cell certifCell = certifTable.Cell(1, 1);
+                certifCell.Range.Text = string.Join(" ", exp.GetIcon(), exp.GetTitle());
+
+                Word.Cell certifCell2 = certifTable.Cell(2, 1);
+                certifCell2.Range.Text = string.Join("\r\n", exp.GetWorks().Select(x => x.GetWork()));
+            }
+
+            List<CategoryCv> cater = new List<CategoryCv>() { cat, exp, tools, savoir_faire, savoir_etre,reseaux_sociaux };
+             Cv cv = new Cv(1, persona1, cater);
+            Engine nengine = new Engine(1, cv, "C:\\Users\\Formation\\Source\\Repos\\Estrani\\Cv_builder\\Template\\wordTemplate.docx");
+
+            Backup newBackup = new Backup(1, nengine);
+            newBackup.ToJsonFile();
 
             #endregion
 
