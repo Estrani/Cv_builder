@@ -153,6 +153,8 @@
     <Folder Include="Backup\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Media\ci.png" />
+    <Content Include="Media\material-symbols_self-improvement %281%29.png" />
     <Content Include="Media\_4e0bf317-78b5-4d2c-a5f0-ee2cd81bbba8 1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

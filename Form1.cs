@@ -66,8 +66,6 @@ namespace PublipostageDemo
             Dictionary<string, string> elements = new Dictionary<string, string>();
 
 
-            elements.Add("Prenom", firstname.Text);
-            elements.Add("NomDeFamille", lastname.Text);
 
             // Ouverture du fichier word
             Word.Application wApp = new Word.Application();
@@ -108,7 +106,7 @@ namespace PublipostageDemo
             #endregion
             List<Misc> miscs = new List<Misc>() { permis, langue };
 
-            Persona persona1 = new Persona(1, "Lambert Perrine", "Développeuse C#", "C:\\Users\\Formation\\Source\\Repos\\Estrani\\Cv_builder\\Media\\_4e0bf317-78b5-4d2c-a5f0-ee2cd81bbba8 1.png", "Graveson", "perrine.lambert24@gmail.com", "0606060606", miscs);
+            Persona persona1 = new Persona(1, "Lambert Perrine", "Développeuse C#", "C:\\Users\\USER\\Downloads\\PublipostageDemo (1)\\PublipostageDemo\\Media\\_4e0bf317-78b5-4d2c-a5f0-ee2cd81bbba8 1.png", "Graveson", "perrine.lambert24@gmail.com", "0606060606", miscs);
 
             #region ajouter un tableau
             // Get the collection of all tables in the document
@@ -153,7 +151,7 @@ namespace PublipostageDemo
 
             Info calme = new Info(2, "Calme");
             List<Info> soft = new List<Info>() { calme };
-            CategoryCv savoir_etre = new CategoryCv(2, "Savoir-être", "-o-", soft);
+            CategoryCv savoir_etre = new CategoryCv(2, "Savoir-être", "C:\\Users\\USER\\Downloads\\PublipostageDemo (1)\\PublipostageDemo\\Media\\material-symbols_self-improvement (1).png", soft);
 
 
             Table softskillTable = allTables.Where(x => x.Title == "softskill_tab").First();
@@ -168,7 +166,7 @@ namespace PublipostageDemo
 
             Info loisir = new Info(1, "Jeu vidéo");
             List<Info> l_infos = new List<Info>() { loisir };
-            CategoryCv cat = new CategoryCv(1, "Centre d'interets", "lllllll", l_infos);
+            CategoryCv cat = new CategoryCv(1, "Centre d'interets", "C:\\Users\\USER\\Downloads\\PublipostageDemo (1)\\PublipostageDemo\\Media\\ci.png", l_infos);
 
 
             Table hobbyTable = allTables.Where(x => x.Title == "hobby_tab").First();
@@ -272,7 +270,7 @@ namespace PublipostageDemo
 
                 TitleInput.Text = backupFile.GetEngine().GetCv().GetPersona().GetTitle();
                 Image image = Image.FromFile(backupFile.GetEngine().GetCv().GetPersona().GetPicture());
-                pictureBox1.Image = image;
+                ppPicture.Image = image;
                 NameInput.Text = backupFile.GetEngine().GetCv().GetPersona().GetName();
                 CityInput.Text = backupFile.GetEngine().GetCv().GetPersona().GetCity();
                 EmailInput.Text = backupFile.GetEngine().GetCv().GetPersona().GetEmail();
@@ -291,6 +289,37 @@ namespace PublipostageDemo
 
 
                 }
+
+                Image seimg = Image.FromFile(backupFile.GetEngine().GetCv().GetCategoryById(2).GetIcon());
+                seIcon.Image = seimg;
+                seInput.Text = backupFile.GetEngine().GetCv().GetCategoryById(2).GetTitle();
+
+                int rowse = 1;
+                foreach (Info info in backupFile.GetEngine().GetCv().GetCategoryById(2).GetInfos())
+                {
+                    System.Windows.Forms.TextBox textBox = new System.Windows.Forms.TextBox();
+                    textBox.Text = info.GetName();
+                    textBox.Width = 170;
+                    selayout.Controls.Add(textBox, 1, rowse);
+                    rowse++;
+                    selayout.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+                }
+
+                Image ciimg = Image.FromFile(backupFile.GetEngine().GetCv().GetCategoryById(1).GetIcon());
+                hobbyImg.Image = ciimg;
+                hobbyTitle.Text = backupFile.GetEngine().GetCv().GetCategoryById(1).GetTitle();
+
+                int rowci = 1;
+                foreach (Info info in backupFile.GetEngine().GetCv().GetCategoryById(1).GetInfos())
+                {
+                    System.Windows.Forms.TextBox textBox = new System.Windows.Forms.TextBox();
+                    textBox.Text = info.GetName();
+                    textBox.Width = 170;
+                    hobbypanel.Controls.Add(textBox, 1, rowci);
+                    rowci++;
+                    hobbypanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+                }
+
             }
         }
 
