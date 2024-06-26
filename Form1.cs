@@ -181,7 +181,7 @@ namespace PublipostageDemo
 
             Info git = new Info(3, "Github link");
             List<Info> social_net = new List<Info>() { git };
-            CategoryCv reseaux_sociaux = new CategoryCv(3, "Réseaux sociaux", "o-o-o", social_net);
+            CategoryCv reseaux_sociaux = new CategoryCv(3, "Réseaux sociaux", "C:\\Users\\USER\\Downloads\\PublipostageDemo (1)\\PublipostageDemo\\Media\\ion_share-social-sharp.png", social_net);
 
 
             Table socialTable = allTables.Where(x => x.Title == "social_tab").First();
@@ -219,7 +219,7 @@ namespace PublipostageDemo
             }
              Work work = new Work(1, 2024, "formation", "Arles", "Greta", "certif", l_infos, ".............................");
              List<Work> listW = new List<Work>() { work };
-            CategoryCv exp = new CategoryCv(5, "Experiences Professionels", "^^^^", listW);
+            CategoryCv exp = new CategoryCv(6, "Experiences Professionels", "^^^^", listW);
 
 
             Table expTable = allTables.Where(x => x.Title == "exp_tab").First();
@@ -320,8 +320,63 @@ namespace PublipostageDemo
                     hobbypanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
                 }
 
+                Image rsimg = Image.FromFile(backupFile.GetEngine().GetCv().GetCategoryById(3).GetIcon());
+                rsImg.Image = rsimg;
+                rsTitleInput.Text = backupFile.GetEngine().GetCv().GetCategoryById(3).GetTitle();
+
+                int rowrs = 1;
+                foreach (Info info in backupFile.GetEngine().GetCv().GetCategoryById(3).GetInfos())
+                {
+                    System.Windows.Forms.TextBox textBox = new System.Windows.Forms.TextBox();
+                    textBox.Text = info.GetName();
+                    textBox.Width = 170;
+                    rsPanel.Controls.Add(textBox, 1, rowrs);
+                    rowrs++;
+                    rsPanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+                }
+
+                sfInput.Text = backupFile.GetEngine().GetCv().GetCategoryById(4).GetTitle();
+
+                int rowsf = 1;
+                foreach (Info info in backupFile.GetEngine().GetCv().GetCategoryById(4).GetInfos())
+                {
+                    System.Windows.Forms.TextBox textBox = new System.Windows.Forms.TextBox();
+                    textBox.Text = info.GetName();
+                    textBox.Width = 170;
+                    sfPanel.Controls.Add(textBox, 1, rowrs);
+                    rowsf++;
+                    sfPanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+                }
+
+                umInput.Text = backupFile.GetEngine().GetCv().GetCategoryById(5).GetTitle();
+
+                int rowum = 1;
+                foreach (Info info in backupFile.GetEngine().GetCv().GetCategoryById(5).GetInfos())
+                {
+                    System.Windows.Forms.TextBox textBox = new System.Windows.Forms.TextBox();
+                    textBox.Text = info.GetName();
+                    textBox.Width = 170;
+                    umPanel.Controls.Add(textBox, 1, rowrs);
+                    rowum++;
+                    umPanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+                }
+
+                epInput.Text = backupFile.GetEngine().GetCv().GetCategoryById(6).GetTitle();
+
+                int rowep = 1;
+                foreach (Work work in backupFile.GetEngine().GetCv().GetCategoryById(5).GetWorks())
+                {
+                    System.Windows.Forms.TextBox textBox = new System.Windows.Forms.TextBox();
+                    textBox.Text = work.GetYear().ToString();
+                    textBox.Width = 170;
+                    epPanel.Controls.Add(textBox, 1, rowep);
+                    rowep++;
+                    umPanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+                }
+
             }
         }
 
+        
     }
 }
