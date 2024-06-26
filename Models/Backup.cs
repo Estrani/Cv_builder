@@ -72,9 +72,6 @@ namespace PublipostageDemo.Models
 
             string filePath = Path.Combine(folderPath, fileName);
 
-            Console.WriteLine($"Titre: {title}");
-            Console.WriteLine($"Objet Engine: {JsonSerializer.Serialize(this, new JsonSerializerOptions { WriteIndented = true })}");
-
 
             string jsonString = JsonSerializer.Serialize(this, new JsonSerializerOptions { WriteIndented = true });
 

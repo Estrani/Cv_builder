@@ -364,19 +364,45 @@ namespace PublipostageDemo
                 epInput.Text = backupFile.GetEngine().GetCv().GetCategoryById(6).GetTitle();
 
                 int rowep = 1;
-                foreach (Work work in backupFile.GetEngine().GetCv().GetCategoryById(5).GetWorks())
+                foreach (Work work in backupFile.GetEngine().GetCv().GetCategoryById(6).GetWorks())
                 {
                     System.Windows.Forms.TextBox textBox = new System.Windows.Forms.TextBox();
                     textBox.Text = work.GetYear().ToString();
                     textBox.Width = 170;
                     epPanel.Controls.Add(textBox, 1, rowep);
                     rowep++;
-                    umPanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+                    epPanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+
+                    System.Windows.Forms.TextBox textBox2 = new System.Windows.Forms.TextBox();
+                    textBox2.Text = work.GetTitle();
+                    textBox2.Width = 170;
+                    epPanel.Controls.Add(textBox, 1, rowep);
+                    rowep++;
+                    epPanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+
+                    System.Windows.Forms.TextBox textBox3 = new System.Windows.Forms.TextBox();
+                    textBox3.Text = work.GetOrganism();
+                    textBox3.Width = 170;
+                    epPanel.Controls.Add(textBox, 1, rowep);
+                    rowep++;
+                    epPanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+
+                    System.Windows.Forms.TextBox textBox4 = new System.Windows.Forms.TextBox();
+                    textBox4.Text = work.GetPlace();
+                    textBox4.Width = 170;
+                    epPanel.Controls.Add(textBox, 1, rowep);
+                    rowep++;
+                    epPanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+
+                    System.Windows.Forms.TextBox textBox5 = new System.Windows.Forms.TextBox();
+                    textBox5.Text = work.GetDescription();
+                    textBox5.Width = 170;
+                    epPanel.Controls.Add(textBox, 1, rowep);
+                    rowep++;
+                    epPanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
                 }
 
             }
         }
-
-        
     }
 }
