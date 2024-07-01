@@ -106,7 +106,7 @@ namespace PublipostageDemo
             #endregion
             List<Misc> miscs = new List<Misc>() { permis, langue };
 
-            Persona persona1 = new Persona(1, "Lambert Perrine", "Développeuse C#", "C:\\Users\\USER\\Downloads\\PublipostageDemo (1)\\PublipostageDemo\\Media\\_4e0bf317-78b5-4d2c-a5f0-ee2cd81bbba8 1.png", "Graveson", "perrine.lambert24@gmail.com", "0606060606", miscs);
+            Persona persona1 = new Persona(1, "Lambert Perrine", "Développeuse C#", "C:\\Users\\Formation\\Source\\Repos\\Estrani\\Cv_builder\\Media\\_4e0bf317-78b5-4d2c-a5f0-ee2cd81bbba8 1.png", "Graveson", "perrine.lambert24@gmail.com", "0606060606", miscs);
 
             #region ajouter un tableau
             // Get the collection of all tables in the document
@@ -151,7 +151,7 @@ namespace PublipostageDemo
 
             Info calme = new Info(2, "Calme");
             List<Info> soft = new List<Info>() { calme };
-            CategoryCv savoir_etre = new CategoryCv(2, "Savoir-être", "C:\\Users\\USER\\Downloads\\PublipostageDemo (1)\\PublipostageDemo\\Media\\material-symbols_self-improvement (1).png", soft);
+            CategoryCv savoir_etre = new CategoryCv(2, "Savoir-être", "C:\\Users\\Formation\\Source\\Repos\\Estrani\\Cv_builder\\Media\\material-symbols_self-improvement (1).png", soft);
 
 
             Table softskillTable = allTables.Where(x => x.Title == "softskill_tab").First();
@@ -166,7 +166,7 @@ namespace PublipostageDemo
 
             Info loisir = new Info(1, "Jeu vidéo");
             List<Info> l_infos = new List<Info>() { loisir };
-            CategoryCv cat = new CategoryCv(1, "Centre d'interets", "C:\\Users\\USER\\Downloads\\PublipostageDemo (1)\\PublipostageDemo\\Media\\ci.png", l_infos);
+            CategoryCv cat = new CategoryCv(1, "Centre d'interets", "C:\\Users\\Formation\\Source\\Repos\\Estrani\\Cv_builder\\Media\\ci.png", l_infos);
 
 
             Table hobbyTable = allTables.Where(x => x.Title == "hobby_tab").First();
@@ -181,7 +181,7 @@ namespace PublipostageDemo
 
             Info git = new Info(3, "Github link");
             List<Info> social_net = new List<Info>() { git };
-            CategoryCv reseaux_sociaux = new CategoryCv(3, "Réseaux sociaux", "C:\\Users\\USER\\Downloads\\PublipostageDemo (1)\\PublipostageDemo\\Media\\ion_share-social-sharp.png", social_net);
+            CategoryCv reseaux_sociaux = new CategoryCv(3, "Réseaux sociaux", "C:\\Users\\Formation\\Source\\Repos\\Estrani\\Cv_builder\\Media\\ion_share-social-sharp.png", social_net);
 
 
             Table socialTable = allTables.Where(x => x.Title == "social_tab").First();
@@ -405,45 +405,7 @@ namespace PublipostageDemo
             }
         }
 
-        private void CvLayout1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void selayout_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void flowLayoutPanel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void dfPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void ppPicture_Click(object sender, EventArgs e)
         {
@@ -451,6 +413,36 @@ namespace PublipostageDemo
             {
                 ppPicture.Load(openFileDialog2.FileName);
             }
+        }
+
+
+        private void hobbyImg_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog2.ShowDialog() == DialogResult.OK)
+            {
+                hobbyImg.Load(openFileDialog2.FileName);
+            }
+        }
+
+        private void seIcon_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog2.ShowDialog() == DialogResult.OK)
+            {
+                seIcon.Load(openFileDialog2.FileName);
+            }
+        }
+
+        private void rsImg_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog2.ShowDialog() == DialogResult.OK)
+            {
+                rsImg.Load(openFileDialog2.FileName);
+            }
+        }
+
+        private void umPanel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
