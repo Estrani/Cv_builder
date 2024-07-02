@@ -68,23 +68,15 @@
             this.epPanel = new System.Windows.Forms.TableLayoutPanel();
             this.epInput = new System.Windows.Forms.TextBox();
             this.AddEp = new System.Windows.Forms.Button();
+            this.dfPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.dfInput = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.Import = new System.Windows.Forms.Button();
             this.Export = new System.Windows.Forms.Button();
             this.generate = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
-            this.button2 = new System.Windows.Forms.Button();
-            this.SkillsDfPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.YearDf = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dfInput = new System.Windows.Forms.TextBox();
-            this.TitleDf = new System.Windows.Forms.TextBox();
-            this.PlaceDf = new System.Windows.Forms.TextBox();
-            this.OrgaDf = new System.Windows.Forms.TextBox();
-            this.CertifDf = new System.Windows.Forms.TextBox();
-            this.DescrDf = new System.Windows.Forms.TextBox();
-            this.dfPanel = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.PersonaPanel.SuspendLayout();
@@ -101,8 +93,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.seIcon)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             this.epPanel.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
             this.dfPanel.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -141,7 +133,7 @@
             this.PersonaPanel.ColumnCount = 3;
             this.PersonaPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.46409F));
             this.PersonaPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 63.53591F));
-            this.PersonaPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 515F));
+            this.PersonaPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 516F));
             this.PersonaPanel.Controls.Add(this.ppPicture, 1, 0);
             this.PersonaPanel.Controls.Add(this.TitleInput, 2, 0);
             this.PersonaPanel.Controls.Add(this.CityInput, 2, 2);
@@ -168,7 +160,7 @@
             this.ppPicture.Location = new System.Drawing.Point(81, 3);
             this.ppPicture.Name = "ppPicture";
             this.PersonaPanel.SetRowSpan(this.ppPicture, 5);
-            this.ppPicture.Size = new System.Drawing.Size(131, 154);
+            this.ppPicture.Size = new System.Drawing.Size(130, 154);
             this.ppPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ppPicture.TabIndex = 1;
             this.ppPicture.TabStop = false;
@@ -176,28 +168,28 @@
             // 
             // TitleInput
             // 
-            this.TitleInput.Location = new System.Drawing.Point(218, 3);
+            this.TitleInput.Location = new System.Drawing.Point(217, 3);
             this.TitleInput.Name = "TitleInput";
             this.TitleInput.Size = new System.Drawing.Size(509, 20);
             this.TitleInput.TabIndex = 0;
             // 
             // CityInput
             // 
-            this.CityInput.Location = new System.Drawing.Point(218, 73);
+            this.CityInput.Location = new System.Drawing.Point(217, 73);
             this.CityInput.Name = "CityInput";
             this.CityInput.Size = new System.Drawing.Size(509, 20);
             this.CityInput.TabIndex = 3;
             // 
             // EmailInput
             // 
-            this.EmailInput.Location = new System.Drawing.Point(218, 103);
+            this.EmailInput.Location = new System.Drawing.Point(217, 103);
             this.EmailInput.Name = "EmailInput";
             this.EmailInput.Size = new System.Drawing.Size(509, 20);
             this.EmailInput.TabIndex = 4;
             // 
             // PhoneInput
             // 
-            this.PhoneInput.Location = new System.Drawing.Point(218, 135);
+            this.PhoneInput.Location = new System.Drawing.Point(217, 135);
             this.PhoneInput.Name = "PhoneInput";
             this.PhoneInput.Size = new System.Drawing.Size(509, 20);
             this.PhoneInput.TabIndex = 5;
@@ -215,13 +207,14 @@
             // 
             // NameInput
             // 
-            this.NameInput.Location = new System.Drawing.Point(218, 38);
+            this.NameInput.Location = new System.Drawing.Point(217, 38);
             this.NameInput.Name = "NameInput";
             this.NameInput.Size = new System.Drawing.Size(509, 20);
             this.NameInput.TabIndex = 2;
             // 
             // MiscPanel
             // 
+            this.MiscPanel.AutoSize = true;
             this.MiscPanel.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.MiscPanel.ColumnCount = 2;
             this.MiscPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.63275F));
@@ -230,9 +223,8 @@
             this.MiscPanel.Controls.Add(this.AddMisc, 1, 0);
             this.MiscPanel.Location = new System.Drawing.Point(3, 169);
             this.MiscPanel.Name = "MiscPanel";
-            this.MiscPanel.RowCount = 2;
+            this.MiscPanel.RowCount = 1;
             this.MiscPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 44.61538F));
-            this.MiscPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
             this.MiscPanel.Size = new System.Drawing.Size(757, 100);
             this.MiscPanel.TabIndex = 13;
             // 
@@ -242,7 +234,7 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Location = new System.Drawing.Point(4, 1);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 54);
+            this.label1.Size = new System.Drawing.Size(111, 98);
             this.label1.TabIndex = 0;
             this.label1.Text = "Infos suplémentaires";
             // 
@@ -251,18 +243,19 @@
             this.AddMisc.Dock = System.Windows.Forms.DockStyle.Fill;
             this.AddMisc.Location = new System.Drawing.Point(122, 4);
             this.AddMisc.Name = "AddMisc";
-            this.AddMisc.Size = new System.Drawing.Size(631, 48);
+            this.AddMisc.Size = new System.Drawing.Size(631, 92);
             this.AddMisc.TabIndex = 1;
             this.AddMisc.Text = "Ajout";
             this.AddMisc.UseVisualStyleBackColor = true;
+            this.AddMisc.Click += new System.EventHandler(this.AddMisc_Click);
             // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.AutoSize = true;
             this.tableLayoutPanel2.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel2.Controls.Add(this.umPanel, 0, 5);
             this.tableLayoutPanel2.Controls.Add(this.sfPanel, 0, 4);
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 0);
@@ -273,14 +266,13 @@
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 275);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 6;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 53.22581F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 46.77419F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 58F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 61F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 65F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 68F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(763, 387);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(447, 319);
             this.tableLayoutPanel2.TabIndex = 14;
             // 
             // umPanel
@@ -293,14 +285,13 @@
             this.umPanel.Controls.Add(this.umInput, 0, 0);
             this.umPanel.Controls.Add(this.AddUm, 1, 0);
             this.umPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.umPanel.Location = new System.Drawing.Point(3, 319);
+            this.umPanel.Location = new System.Drawing.Point(3, 287);
             this.umPanel.Margin = new System.Windows.Forms.Padding(2);
             this.umPanel.Name = "umPanel";
             this.umPanel.RowCount = 1;
             this.umPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51.92308F));
-            this.umPanel.Size = new System.Drawing.Size(757, 65);
+            this.umPanel.Size = new System.Drawing.Size(441, 29);
             this.umPanel.TabIndex = 4;
-            this.umPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.umPanel_Paint);
             // 
             // umInput
             // 
@@ -313,12 +304,13 @@
             // 
             // AddUm
             // 
-            this.AddUm.Location = new System.Drawing.Point(688, 3);
+            this.AddUm.Location = new System.Drawing.Point(372, 3);
             this.AddUm.Name = "AddUm";
             this.AddUm.Size = new System.Drawing.Size(66, 23);
             this.AddUm.TabIndex = 3;
             this.AddUm.Text = "Ajout";
             this.AddUm.UseVisualStyleBackColor = true;
+            this.AddUm.Click += new System.EventHandler(this.AddUm_Click);
             // 
             // sfPanel
             // 
@@ -335,7 +327,7 @@
             this.sfPanel.Name = "sfPanel";
             this.sfPanel.RowCount = 1;
             this.sfPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 59.45946F));
-            this.sfPanel.Size = new System.Drawing.Size(757, 61);
+            this.sfPanel.Size = new System.Drawing.Size(441, 29);
             this.sfPanel.TabIndex = 3;
             // 
             // sfInput
@@ -349,12 +341,13 @@
             // 
             // AddSf
             // 
-            this.AddSf.Location = new System.Drawing.Point(690, 3);
+            this.AddSf.Location = new System.Drawing.Point(374, 3);
             this.AddSf.Name = "AddSf";
             this.AddSf.Size = new System.Drawing.Size(64, 23);
             this.AddSf.TabIndex = 2;
             this.AddSf.Text = "Ajout";
             this.AddSf.UseVisualStyleBackColor = true;
+            this.AddSf.Click += new System.EventHandler(this.AddSf_Click);
             // 
             // label2
             // 
@@ -368,9 +361,9 @@
             // AddCategory
             // 
             this.AddCategory.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.AddCategory.Location = new System.Drawing.Point(385, 4);
+            this.AddCategory.Location = new System.Drawing.Point(68, 4);
             this.AddCategory.Name = "AddCategory";
-            this.AddCategory.Size = new System.Drawing.Size(374, 62);
+            this.AddCategory.Size = new System.Drawing.Size(375, 62);
             this.AddCategory.TabIndex = 1;
             this.AddCategory.Text = "Ajout";
             this.AddCategory.UseVisualStyleBackColor = true;
@@ -382,7 +375,7 @@
             this.tableLayoutPanel2.SetColumnSpan(this.hobbypanel, 2);
             this.hobbypanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.35371F));
             this.hobbypanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 88.64629F));
-            this.hobbypanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 68F));
+            this.hobbypanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 69F));
             this.hobbypanel.Controls.Add(this.hobbyImg, 0, 0);
             this.hobbypanel.Controls.Add(this.hobbyTitle, 1, 0);
             this.hobbypanel.Controls.Add(this.AddHobby, 2, 0);
@@ -392,7 +385,7 @@
             this.hobbypanel.Name = "hobbypanel";
             this.hobbypanel.RowCount = 1;
             this.hobbypanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.hobbypanel.Size = new System.Drawing.Size(757, 55);
+            this.hobbypanel.Size = new System.Drawing.Size(441, 55);
             this.hobbypanel.TabIndex = 8;
             // 
             // hobbyImg
@@ -409,7 +402,7 @@
             // 
             // hobbyTitle
             // 
-            this.hobbyTitle.Location = new System.Drawing.Point(80, 2);
+            this.hobbyTitle.Location = new System.Drawing.Point(44, 2);
             this.hobbyTitle.Margin = new System.Windows.Forms.Padding(2);
             this.hobbyTitle.Name = "hobbyTitle";
             this.hobbyTitle.Size = new System.Drawing.Size(256, 20);
@@ -418,12 +411,13 @@
             // 
             // AddHobby
             // 
-            this.AddHobby.Location = new System.Drawing.Point(691, 3);
+            this.AddHobby.Location = new System.Drawing.Point(374, 3);
             this.AddHobby.Name = "AddHobby";
             this.AddHobby.Size = new System.Drawing.Size(60, 22);
             this.AddHobby.TabIndex = 2;
             this.AddHobby.Text = "Ajout";
             this.AddHobby.UseVisualStyleBackColor = true;
+            this.AddHobby.Click += new System.EventHandler(this.AddHobby_Click);
             // 
             // rsPanel
             // 
@@ -432,7 +426,7 @@
             this.tableLayoutPanel2.SetColumnSpan(this.rsPanel, 2);
             this.rsPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.48035F));
             this.rsPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 89.51965F));
-            this.rsPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 72F));
+            this.rsPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 73F));
             this.rsPanel.Controls.Add(this.rsImg, 0, 0);
             this.rsPanel.Controls.Add(this.rsTitleInput, 1, 0);
             this.rsPanel.Controls.Add(this.AddRs, 2, 0);
@@ -442,7 +436,7 @@
             this.rsPanel.Name = "rsPanel";
             this.rsPanel.RowCount = 1;
             this.rsPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55.73771F));
-            this.rsPanel.Size = new System.Drawing.Size(757, 57);
+            this.rsPanel.Size = new System.Drawing.Size(441, 57);
             this.rsPanel.TabIndex = 9;
             // 
             // rsImg
@@ -459,7 +453,7 @@
             // 
             // rsTitleInput
             // 
-            this.rsTitleInput.Location = new System.Drawing.Point(73, 2);
+            this.rsTitleInput.Location = new System.Drawing.Point(40, 2);
             this.rsTitleInput.Margin = new System.Windows.Forms.Padding(2);
             this.rsTitleInput.Name = "rsTitleInput";
             this.rsTitleInput.Size = new System.Drawing.Size(256, 20);
@@ -468,12 +462,13 @@
             // 
             // AddRs
             // 
-            this.AddRs.Location = new System.Drawing.Point(687, 3);
+            this.AddRs.Location = new System.Drawing.Point(370, 3);
             this.AddRs.Name = "AddRs";
             this.AddRs.Size = new System.Drawing.Size(64, 23);
             this.AddRs.TabIndex = 2;
             this.AddRs.Text = "Ajout";
             this.AddRs.UseVisualStyleBackColor = true;
+            this.AddRs.Click += new System.EventHandler(this.AddRs_Click);
             // 
             // selayout
             // 
@@ -482,7 +477,7 @@
             this.tableLayoutPanel2.SetColumnSpan(this.selayout, 2);
             this.selayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.35371F));
             this.selayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 88.64629F));
-            this.selayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 70F));
+            this.selayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 71F));
             this.selayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 15F));
             this.selayout.Controls.Add(this.seIcon, 0, 0);
             this.selayout.Controls.Add(this.seInput, 1, 0);
@@ -493,7 +488,7 @@
             this.selayout.Name = "selayout";
             this.selayout.RowCount = 1;
             this.selayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 52.17391F));
-            this.selayout.Size = new System.Drawing.Size(757, 54);
+            this.selayout.Size = new System.Drawing.Size(441, 54);
             this.selayout.TabIndex = 7;
             // 
             // seIcon
@@ -510,7 +505,7 @@
             // 
             // seInput
             // 
-            this.seInput.Location = new System.Drawing.Point(79, 2);
+            this.seInput.Location = new System.Drawing.Point(44, 2);
             this.seInput.Margin = new System.Windows.Forms.Padding(2);
             this.seInput.Name = "seInput";
             this.seInput.Size = new System.Drawing.Size(256, 20);
@@ -519,12 +514,13 @@
             // 
             // AddSe
             // 
-            this.AddSe.Location = new System.Drawing.Point(689, 3);
+            this.AddSe.Location = new System.Drawing.Point(372, 3);
             this.AddSe.Name = "AddSe";
             this.AddSe.Size = new System.Drawing.Size(62, 22);
             this.AddSe.TabIndex = 2;
             this.AddSe.Text = "Ajout";
             this.AddSe.UseVisualStyleBackColor = true;
+            this.AddSe.Click += new System.EventHandler(this.AddSe_Click);
             // 
             // tableLayoutPanel3
             // 
@@ -537,13 +533,13 @@
             this.tableLayoutPanel3.Controls.Add(this.AddWork, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.epPanel, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.dfPanel, 0, 2);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 668);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 600);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 3;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(651, 403);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(651, 121);
             this.tableLayoutPanel3.TabIndex = 15;
             // 
             // label3
@@ -579,10 +575,10 @@
             this.epPanel.Location = new System.Drawing.Point(3, 56);
             this.epPanel.Margin = new System.Windows.Forms.Padding(2);
             this.epPanel.Name = "epPanel";
-            this.epPanel.RowCount = 2;
-            this.epPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.36873F));
-            this.epPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 74.63127F));
-            this.epPanel.Size = new System.Drawing.Size(645, 114);
+            this.epPanel.RowCount = 1;
+            this.epPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.epPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
+            this.epPanel.Size = new System.Drawing.Size(645, 28);
             this.epPanel.TabIndex = 11;
             // 
             // epInput
@@ -602,6 +598,43 @@
             this.AddEp.TabIndex = 1;
             this.AddEp.Text = "Ajout";
             this.AddEp.UseVisualStyleBackColor = true;
+            // 
+            // dfPanel
+            // 
+            this.dfPanel.AutoSize = true;
+            this.dfPanel.ColumnCount = 2;
+            this.tableLayoutPanel3.SetColumnSpan(this.dfPanel, 2);
+            this.dfPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.dfPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 184F));
+            this.dfPanel.Controls.Add(this.dfInput, 0, 0);
+            this.dfPanel.Controls.Add(this.button1, 1, 0);
+            this.dfPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dfPanel.Location = new System.Drawing.Point(3, 89);
+            this.dfPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.dfPanel.Name = "dfPanel";
+            this.dfPanel.RowCount = 1;
+            this.dfPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.dfPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
+            this.dfPanel.Size = new System.Drawing.Size(645, 29);
+            this.dfPanel.TabIndex = 12;
+            // 
+            // dfInput
+            // 
+            this.dfInput.Location = new System.Drawing.Point(2, 2);
+            this.dfInput.Margin = new System.Windows.Forms.Padding(2);
+            this.dfInput.Name = "dfInput";
+            this.dfInput.Size = new System.Drawing.Size(166, 20);
+            this.dfInput.TabIndex = 0;
+            this.dfInput.Text = "Diplômes et Formations";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(464, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Ajout";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // flowLayoutPanel1
             // 
@@ -656,127 +689,6 @@
             this.openFileDialog2.Filter = "JPEG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|BMP Files (*.bmp)|*.bmp|All file" +
     "s (*.*)|*.*";
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(464, 162);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Ajout";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // SkillsDfPanel
-            // 
-            this.SkillsDfPanel.Location = new System.Drawing.Point(3, 162);
-            this.SkillsDfPanel.Name = "SkillsDfPanel";
-            this.SkillsDfPanel.Size = new System.Drawing.Size(164, 34);
-            this.SkillsDfPanel.TabIndex = 7;
-            // 
-            // YearDf
-            // 
-            this.dfPanel.SetColumnSpan(this.YearDf, 2);
-            this.YearDf.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.YearDf.Location = new System.Drawing.Point(3, 32);
-            this.YearDf.Name = "YearDf";
-            this.YearDf.Size = new System.Drawing.Size(639, 20);
-            this.YearDf.TabIndex = 2;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(464, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Ajout";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // dfInput
-            // 
-            this.dfInput.Location = new System.Drawing.Point(2, 2);
-            this.dfInput.Margin = new System.Windows.Forms.Padding(2);
-            this.dfInput.Name = "dfInput";
-            this.dfInput.Size = new System.Drawing.Size(166, 20);
-            this.dfInput.TabIndex = 0;
-            this.dfInput.Text = "Diplômes et Formations";
-            // 
-            // TitleDf
-            // 
-            this.dfPanel.SetColumnSpan(this.TitleDf, 2);
-            this.TitleDf.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TitleDf.Location = new System.Drawing.Point(3, 58);
-            this.TitleDf.Name = "TitleDf";
-            this.TitleDf.Size = new System.Drawing.Size(639, 20);
-            this.TitleDf.TabIndex = 3;
-            // 
-            // PlaceDf
-            // 
-            this.dfPanel.SetColumnSpan(this.PlaceDf, 2);
-            this.PlaceDf.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PlaceDf.Location = new System.Drawing.Point(3, 84);
-            this.PlaceDf.Name = "PlaceDf";
-            this.PlaceDf.Size = new System.Drawing.Size(639, 20);
-            this.PlaceDf.TabIndex = 4;
-            // 
-            // OrgaDf
-            // 
-            this.dfPanel.SetColumnSpan(this.OrgaDf, 2);
-            this.OrgaDf.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.OrgaDf.Location = new System.Drawing.Point(3, 110);
-            this.OrgaDf.Name = "OrgaDf";
-            this.OrgaDf.Size = new System.Drawing.Size(639, 20);
-            this.OrgaDf.TabIndex = 5;
-            // 
-            // CertifDf
-            // 
-            this.dfPanel.SetColumnSpan(this.CertifDf, 2);
-            this.CertifDf.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CertifDf.Location = new System.Drawing.Point(3, 136);
-            this.CertifDf.Name = "CertifDf";
-            this.CertifDf.Size = new System.Drawing.Size(639, 20);
-            this.CertifDf.TabIndex = 6;
-            // 
-            // DescrDf
-            // 
-            this.dfPanel.SetColumnSpan(this.DescrDf, 2);
-            this.DescrDf.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DescrDf.Location = new System.Drawing.Point(3, 202);
-            this.DescrDf.Name = "DescrDf";
-            this.DescrDf.Size = new System.Drawing.Size(639, 20);
-            this.DescrDf.TabIndex = 9;
-            // 
-            // dfPanel
-            // 
-            this.dfPanel.AutoSize = true;
-            this.dfPanel.ColumnCount = 2;
-            this.tableLayoutPanel3.SetColumnSpan(this.dfPanel, 2);
-            this.dfPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.dfPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 184F));
-            this.dfPanel.Controls.Add(this.DescrDf, 0, 7);
-            this.dfPanel.Controls.Add(this.CertifDf, 0, 5);
-            this.dfPanel.Controls.Add(this.OrgaDf, 0, 4);
-            this.dfPanel.Controls.Add(this.PlaceDf, 0, 3);
-            this.dfPanel.Controls.Add(this.TitleDf, 0, 2);
-            this.dfPanel.Controls.Add(this.dfInput, 0, 0);
-            this.dfPanel.Controls.Add(this.button1, 1, 0);
-            this.dfPanel.Controls.Add(this.YearDf, 0, 1);
-            this.dfPanel.Controls.Add(this.SkillsDfPanel, 0, 6);
-            this.dfPanel.Controls.Add(this.button2, 1, 6);
-            this.dfPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dfPanel.Location = new System.Drawing.Point(3, 175);
-            this.dfPanel.Margin = new System.Windows.Forms.Padding(2);
-            this.dfPanel.Name = "dfPanel";
-            this.dfPanel.RowCount = 8;
-            this.dfPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.dfPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.dfPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.dfPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.dfPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.dfPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.dfPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.dfPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.dfPanel.Size = new System.Drawing.Size(645, 225);
-            this.dfPanel.TabIndex = 12;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -812,9 +724,9 @@
             this.tableLayoutPanel3.PerformLayout();
             this.epPanel.ResumeLayout(false);
             this.epPanel.PerformLayout();
-            this.flowLayoutPanel1.ResumeLayout(false);
             this.dfPanel.ResumeLayout(false);
             this.dfPanel.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -868,16 +780,8 @@
         private System.Windows.Forms.Button Export;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TableLayoutPanel dfPanel;
-        private System.Windows.Forms.TextBox DescrDf;
-        private System.Windows.Forms.TextBox CertifDf;
-        private System.Windows.Forms.TextBox OrgaDf;
-        private System.Windows.Forms.TextBox PlaceDf;
-        private System.Windows.Forms.TextBox TitleDf;
         private System.Windows.Forms.TextBox dfInput;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox YearDf;
-        private System.Windows.Forms.FlowLayoutPanel SkillsDfPanel;
-        private System.Windows.Forms.Button button2;
     }
 }
 

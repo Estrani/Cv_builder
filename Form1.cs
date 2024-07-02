@@ -427,6 +427,73 @@ namespace PublipostageDemo
                     rowep++;
                 }
 
+
+                dfInput.Text = backupFile.GetEngine().GetCv().GetCategoryById(6).GetTitle();
+
+                int rowdf = 1;
+                foreach (Work work in backupFile.GetEngine().GetCv().GetCategoryById(6).GetWorks())
+                {
+                    dfPanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+
+                    System.Windows.Forms.TextBox textBox = new System.Windows.Forms.TextBox();
+                    textBox.Text = work.GetYear().ToString();
+                    textBox.Width = 170;
+                    dfPanel.Controls.Add(textBox, 0, rowdf);
+                    rowdf++;
+
+                    dfPanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+
+                    System.Windows.Forms.TextBox textBox2 = new System.Windows.Forms.TextBox();
+                    textBox2.Text = work.GetTitle();
+                    textBox2.Width = 170;
+                    dfPanel.Controls.Add(textBox2, 0, rowdf);
+                    rowdf++;
+
+                    dfPanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+
+                    System.Windows.Forms.TextBox textBox3 = new System.Windows.Forms.TextBox();
+                    textBox3.Text = work.GetOrganism();
+                    textBox3.Width = 170;
+                    dfPanel.Controls.Add(textBox3, 0, rowdf);
+                    rowdf++;
+
+                    dfPanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+
+                    System.Windows.Forms.TextBox textBox4 = new System.Windows.Forms.TextBox();
+                    textBox4.Text = work.GetPlace();
+                    textBox4.Width = 170;
+                    dfPanel.Controls.Add(textBox4, 0, rowdf);
+                    rowdf++;
+
+                    //List skills 
+
+                    dfPanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+
+                    System.Windows.Forms.FlowLayoutPanel dfSkillsPanel = new System.Windows.Forms.FlowLayoutPanel();
+                    dfPanel.Controls.Add(dfSkillsPanel, 0, rowdf);
+
+                    foreach (Info skill in work.GetSkills())
+                    {
+                        System.Windows.Forms.TextBox skillwork = new System.Windows.Forms.TextBox();
+                        skillwork.Text = skill.GetName().ToString();
+                        skillwork.Width = 170;
+                        dfSkillsPanel.Controls.Add(skillwork);
+                    }
+
+                    System.Windows.Forms.Button addDfSkill = new System.Windows.Forms.Button();
+                    addDfSkill.Text = "Ajout";
+                    dfPanel.Controls.Add(addDfSkill, 1, rowdf);
+                    rowdf++;
+
+                    dfPanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+
+                    System.Windows.Forms.TextBox textBox5 = new System.Windows.Forms.TextBox();
+                    textBox5.Text = work.GetDescription();
+                    textBox5.Width = 170;
+                    dfPanel.Controls.Add(textBox5, 0, rowdf);
+                    rowdf++;
+                }
+
             }
         }
 
@@ -465,9 +532,71 @@ namespace PublipostageDemo
             }
         }
 
-        private void umPanel_Paint(object sender, PaintEventArgs e)
+        int rowAddMisc = 0;
+        private void AddMisc_Click(object sender, EventArgs e)
         {
+            MiscPanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+            rowAddMisc++;
 
+            System.Windows.Forms.TextBox textBox = new System.Windows.Forms.TextBox();
+            textBox.Width = 170;
+            MiscPanel.Controls.Add(textBox, 1, rowAddMisc);
+
+        }
+
+        int rowAddHobby = 0;
+        private void AddHobby_Click(object sender, EventArgs e)
+        {
+            hobbypanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+            rowAddHobby++;
+
+            System.Windows.Forms.TextBox textBox = new System.Windows.Forms.TextBox();
+            textBox.Width = 170;
+            hobbypanel.Controls.Add(textBox, 1, rowAddHobby);
+        }
+
+        int rowAddse = 0;
+        private void AddSe_Click(object sender, EventArgs e)
+        {
+            selayout.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+            rowAddse++;
+
+            System.Windows.Forms.TextBox textBox = new System.Windows.Forms.TextBox();
+            textBox.Width = 170;
+            selayout.Controls.Add(textBox, 1, rowAddse);
+        }
+
+        int rowAddrs = 0;
+        private void AddRs_Click(object sender, EventArgs e)
+        {
+            rsPanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+            rowAddrs++;
+
+            System.Windows.Forms.TextBox textBox = new System.Windows.Forms.TextBox();
+            textBox.Width = 170;
+            rsPanel.Controls.Add(textBox, 1, rowAddrs);
+        }
+
+        int rowAddsf = 0;
+        private void AddSf_Click(object sender, EventArgs e)
+        {
+            sfPanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+            rowAddsf++;
+
+            System.Windows.Forms.TextBox textBox = new System.Windows.Forms.TextBox();
+            textBox.Width = 170;
+            sfPanel.Controls.Add(textBox, 0, rowAddsf);
+        }
+
+        int rowAddum = 0;
+        private void AddUm_Click(object sender, EventArgs e)
+        {
+            umPanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+            rowAddum++;
+
+            System.Windows.Forms.TextBox textBox = new System.Windows.Forms.TextBox();
+            textBox.Width = 170;
+            umPanel.Controls.Add(textBox, 0, rowAddum);
         }
     }
 }
