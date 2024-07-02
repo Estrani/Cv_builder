@@ -276,14 +276,14 @@ namespace PublipostageDemo
                 EmailInput.Text = backupFile.GetEngine().GetCv().GetPersona().GetEmail();
                 PhoneInput.Text = backupFile.GetEngine().GetCv().GetPersona().GetPhone();
 
-                int rowMisc = 0;
+                int rowMisc = 1;
 
                 foreach (Misc misc in backupFile.GetEngine().GetCv().GetPersona().GetMiscs())
                 {
                     System.Windows.Forms.TextBox textBox = new System.Windows.Forms.TextBox();
                     textBox.Text = misc.GetExtra();
                     textBox.Width = 170;
-                    MiscPanel.Controls.Add(textBox, 0, rowMisc);
+                    MiscPanel.Controls.Add(textBox, 1, rowMisc);
                     rowMisc++;
                     MiscPanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
 
@@ -343,7 +343,7 @@ namespace PublipostageDemo
                     System.Windows.Forms.TextBox textBox = new System.Windows.Forms.TextBox();
                     textBox.Text = info.GetName();
                     textBox.Width = 170;
-                    sfPanel.Controls.Add(textBox, 1, rowrs);
+                    sfPanel.Controls.Add(textBox, 0, rowrs);
                     rowsf++;
                     sfPanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
                 }
@@ -356,7 +356,7 @@ namespace PublipostageDemo
                     System.Windows.Forms.TextBox textBox = new System.Windows.Forms.TextBox();
                     textBox.Text = info.GetName();
                     textBox.Width = 170;
-                    umPanel.Controls.Add(textBox, 1, rowrs);
+                    umPanel.Controls.Add(textBox, 0, rowrs);
                     rowum++;
                     umPanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
                 }
@@ -366,40 +366,65 @@ namespace PublipostageDemo
                 int rowep = 1;
                 foreach (Work work in backupFile.GetEngine().GetCv().GetCategoryById(6).GetWorks())
                 {
+                    epPanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+
                     System.Windows.Forms.TextBox textBox = new System.Windows.Forms.TextBox();
                     textBox.Text = work.GetYear().ToString();
                     textBox.Width = 170;
-                    epPanel.Controls.Add(textBox, 1, rowep);
+                    epPanel.Controls.Add(textBox, 0, rowep);
                     rowep++;
+
                     epPanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
 
                     System.Windows.Forms.TextBox textBox2 = new System.Windows.Forms.TextBox();
                     textBox2.Text = work.GetTitle();
                     textBox2.Width = 170;
-                    epPanel.Controls.Add(textBox, 1, rowep);
+                    epPanel.Controls.Add(textBox2, 0, rowep);
                     rowep++;
+
                     epPanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
 
                     System.Windows.Forms.TextBox textBox3 = new System.Windows.Forms.TextBox();
                     textBox3.Text = work.GetOrganism();
                     textBox3.Width = 170;
-                    epPanel.Controls.Add(textBox, 1, rowep);
+                    epPanel.Controls.Add(textBox3, 0, rowep);
                     rowep++;
+
                     epPanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
 
                     System.Windows.Forms.TextBox textBox4 = new System.Windows.Forms.TextBox();
                     textBox4.Text = work.GetPlace();
                     textBox4.Width = 170;
-                    epPanel.Controls.Add(textBox, 1, rowep);
+                    epPanel.Controls.Add(textBox4, 0, rowep);
                     rowep++;
+                    
+                    //List skills 
+
+                    epPanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+
+                    System.Windows.Forms.FlowLayoutPanel epSkillsPanel = new System.Windows.Forms.FlowLayoutPanel();
+                    epPanel.Controls.Add(epSkillsPanel, 0, rowep);
+
+                    foreach(Info skill in work.GetSkills())
+                    {
+                        System.Windows.Forms.TextBox skillwork = new System.Windows.Forms.TextBox();
+                        skillwork.Text = skill.GetName().ToString();
+                        skillwork.Width = 170;
+                        epSkillsPanel.Controls.Add(skillwork);
+                    }
+
+                    System.Windows.Forms.Button addEpSkill = new System.Windows.Forms.Button();
+                    addEpSkill.Text = "Ajout";
+                    epPanel.Controls.Add(addEpSkill, 1, rowep);
+                    rowep++;
+
                     epPanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
 
                     System.Windows.Forms.TextBox textBox5 = new System.Windows.Forms.TextBox();
                     textBox5.Text = work.GetDescription();
                     textBox5.Width = 170;
-                    epPanel.Controls.Add(textBox, 1, rowep);
+                    epPanel.Controls.Add(textBox5, 0, rowep);
                     rowep++;
-                    epPanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
                 }
 
             }
