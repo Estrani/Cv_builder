@@ -23,15 +23,169 @@ namespace PublipostageDemo
 {
     public partial class Form1 : Form
     {
+        int rowdf = 1;
+        int rowep = 1;
+        int rowMisc = 1;
+        int rowse = 1;
+        int rowci = 1;
+        int rowrs = 1;
+        int rowum = 1;
+        int rowsf = 1;
+
+
+        private System.Windows.Forms.TableLayoutPanel PersonaPanel;
+        private System.Windows.Forms.TextBox TitleInput;
+        private System.Windows.Forms.PictureBox ppPicture;
+        private System.Windows.Forms.TextBox NameInput;
+        private System.Windows.Forms.TextBox CityInput;
+        private System.Windows.Forms.TextBox EmailInput;
+        private System.Windows.Forms.TextBox PhoneInput;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        
+
+
+
+
         private MsDocumentHelper closeAllOpendApps;
         public Form1()
         {
             InitializeComponent();
+            InitCv();
             closeAllOpendApps = new MsDocumentHelper();
             closeAllOpendApps.Close("Opening");
             this.Closing += Form1_Closing;
         }
 
+        private void InitCv()
+        {
+            this.PersonaPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.ppPicture = new System.Windows.Forms.PictureBox();
+            this.TitleInput = new System.Windows.Forms.TextBox();
+            this.CityInput = new System.Windows.Forms.TextBox();
+            this.EmailInput = new System.Windows.Forms.TextBox();
+            this.PhoneInput = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.NameInput = new System.Windows.Forms.TextBox();
+
+            this.PersonaPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ppPicture)).BeginInit();
+
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel2.SuspendLayout();
+
+
+
+            // 
+            // PersonaPanel
+            // 
+            this.PersonaPanel.ColumnCount = 3;
+            this.PersonaPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.46409F));
+            this.PersonaPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 63.53591F));
+            this.PersonaPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 518F));
+            this.PersonaPanel.Controls.Add(this.ppPicture, 1, 0);
+            this.PersonaPanel.Controls.Add(this.TitleInput, 2, 0);
+            this.PersonaPanel.Controls.Add(this.CityInput, 2, 2);
+            this.PersonaPanel.Controls.Add(this.EmailInput, 2, 3);
+            this.PersonaPanel.Controls.Add(this.PhoneInput, 2, 4);
+            this.PersonaPanel.Controls.Add(this.label4, 0, 0);
+            this.PersonaPanel.Controls.Add(this.NameInput, 2, 1);
+            this.PersonaPanel.Location = new System.Drawing.Point(3, 3);
+            this.PersonaPanel.Name = "PersonaPanel";
+            this.PersonaPanel.RowCount = 5;
+            this.PersonaPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.PersonaPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.PersonaPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.PersonaPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.PersonaPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.PersonaPanel.Size = new System.Drawing.Size(731, 160);
+            this.PersonaPanel.TabIndex = 2;
+
+            // 
+            // ppPicture
+            // 
+            this.ppPicture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ppPicture.Cursor = System.Windows.Forms.Cursors.Default;
+            this.ppPicture.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ppPicture.Location = new System.Drawing.Point(80, 3);
+            this.ppPicture.Name = "ppPicture";
+            this.PersonaPanel.SetRowSpan(this.ppPicture, 5);
+            this.ppPicture.Size = new System.Drawing.Size(129, 154);
+            this.ppPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ppPicture.TabIndex = 1;
+            this.ppPicture.TabStop = false;
+            this.ppPicture.Click += new System.EventHandler(this.ppPicture_Click);
+            // 
+            // TitleInput
+            // 
+            this.TitleInput.Location = new System.Drawing.Point(215, 3);
+            this.TitleInput.Name = "TitleInput";
+            this.TitleInput.Size = new System.Drawing.Size(509, 20);
+            this.TitleInput.TabIndex = 0;
+            // 
+            // CityInput
+            // 
+            this.CityInput.Location = new System.Drawing.Point(215, 73);
+            this.CityInput.Name = "CityInput";
+            this.CityInput.Size = new System.Drawing.Size(509, 20);
+            this.CityInput.TabIndex = 3;
+            // 
+            // EmailInput
+            // 
+            this.EmailInput.Location = new System.Drawing.Point(215, 103);
+            this.EmailInput.Name = "EmailInput";
+            this.EmailInput.Size = new System.Drawing.Size(509, 20);
+            this.EmailInput.TabIndex = 4;
+            // 
+            // PhoneInput
+            // 
+            this.PhoneInput.Location = new System.Drawing.Point(215, 135);
+            this.PhoneInput.Name = "PhoneInput";
+            this.PhoneInput.Size = new System.Drawing.Size(509, 20);
+            this.PhoneInput.TabIndex = 5;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label4.Location = new System.Drawing.Point(3, 0);
+            this.label4.Name = "label4";
+            this.PersonaPanel.SetRowSpan(this.label4, 5);
+            this.label4.Size = new System.Drawing.Size(71, 160);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Persona";
+            // 
+            // NameInput
+            // 
+            this.NameInput.Location = new System.Drawing.Point(215, 38);
+            this.NameInput.Name = "NameInput";
+            this.NameInput.Size = new System.Drawing.Size(509, 20);
+            this.NameInput.TabIndex = 2;
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.AutoScroll = true;
+            this.tableLayoutPanel1.SetColumnSpan(this.flowLayoutPanel2, 2);
+            this.flowLayoutPanel2.Controls.Add(this.PersonaPanel);
+            this.flowLayoutPanel2.Controls.Add(this.MiscPanel);
+            this.flowLayoutPanel2.Controls.Add(this.categoriesPanel);
+            this.flowLayoutPanel2.Controls.Add(this.tableLayoutPanel3);
+            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 54);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(1065, 630);
+            this.flowLayoutPanel2.TabIndex = 1;
+
+            this.PersonaPanel.ResumeLayout(false);
+            this.PersonaPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ppPicture)).EndInit();
+
+            this.flowLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel2.PerformLayout();
+
+            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel2, 0, 1);
+
+        }
         private void Form1_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             if (null == closeAllOpendApps)
@@ -276,7 +430,6 @@ namespace PublipostageDemo
                 EmailInput.Text = backupFile.GetEngine().GetCv().GetPersona().GetEmail();
                 PhoneInput.Text = backupFile.GetEngine().GetCv().GetPersona().GetPhone();
 
-                int rowMisc = 1;
 
                 foreach (Misc misc in backupFile.GetEngine().GetCv().GetPersona().GetMiscs())
                 {
@@ -294,7 +447,6 @@ namespace PublipostageDemo
                 seIcon.Image = seimg;
                 seInput.Text = backupFile.GetEngine().GetCv().GetCategoryById(2).GetTitle();
 
-                int rowse = 1;
                 foreach (Info info in backupFile.GetEngine().GetCv().GetCategoryById(2).GetInfos())
                 {
                     System.Windows.Forms.TextBox textBox = new System.Windows.Forms.TextBox();
@@ -309,7 +461,6 @@ namespace PublipostageDemo
                 hobbyImg.Image = ciimg;
                 hobbyTitle.Text = backupFile.GetEngine().GetCv().GetCategoryById(1).GetTitle();
 
-                int rowci = 1;
                 foreach (Info info in backupFile.GetEngine().GetCv().GetCategoryById(1).GetInfos())
                 {
                     System.Windows.Forms.TextBox textBox = new System.Windows.Forms.TextBox();
@@ -324,7 +475,6 @@ namespace PublipostageDemo
                 rsImg.Image = rsimg;
                 rsTitleInput.Text = backupFile.GetEngine().GetCv().GetCategoryById(3).GetTitle();
 
-                int rowrs = 1;
                 foreach (Info info in backupFile.GetEngine().GetCv().GetCategoryById(3).GetInfos())
                 {
                     System.Windows.Forms.TextBox textBox = new System.Windows.Forms.TextBox();
@@ -337,7 +487,6 @@ namespace PublipostageDemo
 
                 sfInput.Text = backupFile.GetEngine().GetCv().GetCategoryById(4).GetTitle();
 
-                int rowsf = 1;
                 foreach (Info info in backupFile.GetEngine().GetCv().GetCategoryById(4).GetInfos())
                 {
                     System.Windows.Forms.TextBox textBox = new System.Windows.Forms.TextBox();
@@ -350,7 +499,6 @@ namespace PublipostageDemo
 
                 umInput.Text = backupFile.GetEngine().GetCv().GetCategoryById(5).GetTitle();
 
-                int rowum = 1;
                 foreach (Info info in backupFile.GetEngine().GetCv().GetCategoryById(5).GetInfos())
                 {
                     System.Windows.Forms.TextBox textBox = new System.Windows.Forms.TextBox();
@@ -363,7 +511,6 @@ namespace PublipostageDemo
 
                 epInput.Text = backupFile.GetEngine().GetCv().GetCategoryById(6).GetTitle();
 
-                int rowep = 1;
                 foreach (Work work in backupFile.GetEngine().GetCv().GetCategoryById(6).GetWorks())
                 {
                     epPanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
@@ -430,7 +577,6 @@ namespace PublipostageDemo
 
                 dfInput.Text = backupFile.GetEngine().GetCv().GetCategoryById(6).GetTitle();
 
-                int rowdf = 1;
                 foreach (Work work in backupFile.GetEngine().GetCv().GetCategoryById(6).GetWorks())
                 {
                     dfPanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
@@ -536,67 +682,90 @@ namespace PublipostageDemo
         private void AddMisc_Click(object sender, EventArgs e)
         {
             MiscPanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
-            rowAddMisc++;
+            rowMisc++;
 
             System.Windows.Forms.TextBox textBox = new System.Windows.Forms.TextBox();
             textBox.Width = 170;
-            MiscPanel.Controls.Add(textBox, 1, rowAddMisc);
+            MiscPanel.Controls.Add(textBox, 1, rowMisc);
 
         }
 
-        int rowAddHobby = 0;
         private void AddHobby_Click(object sender, EventArgs e)
         {
             hobbypanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
-            rowAddHobby++;
+            rowci++;
 
             System.Windows.Forms.TextBox textBox = new System.Windows.Forms.TextBox();
             textBox.Width = 170;
-            hobbypanel.Controls.Add(textBox, 1, rowAddHobby);
+            hobbypanel.Controls.Add(textBox, 1, rowci);
         }
 
         int rowAddse = 0;
         private void AddSe_Click(object sender, EventArgs e)
         {
             selayout.RowStyles.Add(new RowStyle(SizeType.AutoSize));
-            rowAddse++;
+            rowse++;
 
             System.Windows.Forms.TextBox textBox = new System.Windows.Forms.TextBox();
             textBox.Width = 170;
-            selayout.Controls.Add(textBox, 1, rowAddse);
+            selayout.Controls.Add(textBox, 1, rowse);
         }
 
         int rowAddrs = 0;
         private void AddRs_Click(object sender, EventArgs e)
         {
             rsPanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
-            rowAddrs++;
+            rowrs++;
 
             System.Windows.Forms.TextBox textBox = new System.Windows.Forms.TextBox();
             textBox.Width = 170;
-            rsPanel.Controls.Add(textBox, 1, rowAddrs);
+            rsPanel.Controls.Add(textBox, 1, rowrs);
         }
 
         int rowAddsf = 0;
         private void AddSf_Click(object sender, EventArgs e)
         {
             sfPanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
-            rowAddsf++;
+            rowsf++;
 
             System.Windows.Forms.TextBox textBox = new System.Windows.Forms.TextBox();
             textBox.Width = 170;
-            sfPanel.Controls.Add(textBox, 0, rowAddsf);
+            sfPanel.Controls.Add(textBox, 0, rowsf);
         }
 
         int rowAddum = 0;
         private void AddUm_Click(object sender, EventArgs e)
         {
             umPanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
-            rowAddum++;
+            rowum++;
 
             System.Windows.Forms.TextBox textBox = new System.Windows.Forms.TextBox();
             textBox.Width = 170;
-            umPanel.Controls.Add(textBox, 0, rowAddum);
+            umPanel.Controls.Add(textBox, 0, rowum);
         }
+
+        int rowcat = 5;
+        private void AddCategory_Click(object sender, EventArgs e)
+        {
+            categoriesPanel.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+            rowcat++;
+            System.Windows.Forms.TableLayoutPanel newCat = new System.Windows.Forms.TableLayoutPanel();
+            categoriesPanel.Controls.Add(newCat, 0, rowcat);
+            categoriesPanel.SetColumnSpan(newCat, 3);
+            // tablelayoutpanel construction
+            newCat.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
+            newCat.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
+            newCat.Dock = DockStyle.Fill;
+
+            System.Windows.Forms.PictureBox catIcon = new System.Windows.Forms.PictureBox();
+            catIcon.BorderStyle = BorderStyle.FixedSingle;
+            newCat.Controls.Add(catIcon, 0, 0);
+            System.Windows.Forms.TextBox catTitle = new System.Windows.Forms.TextBox();
+            newCat.Controls.Add(catTitle, 1, 0);
+            System.Windows.Forms.Button catAdd = new System.Windows.Forms.Button();
+            catAdd.Text = "Ajout";
+            newCat.Controls.Add(catAdd, 3, 0);
+        }
+
     }
 }
